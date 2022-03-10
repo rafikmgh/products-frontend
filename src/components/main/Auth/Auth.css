@@ -40,6 +40,10 @@
   cursor: pointer;
 }
 
+.logout-link:hover {
+  color: var(--secondary-color);
+}
+
 input {
   border: 2px solid var(--primary-color);
   border-radius: 5px;

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import ValidationPop from '../../reusable/ValidationPop'
 // REDUX
 import { connect } from 'react-redux'
 import {
@@ -23,8 +24,10 @@ import { useNavigate } from 'react-router-dom'
 import CenteredPage from '../../reusable/CenteredPage'
 import Spinner from '../../reusable/Spinner'
 
+//Allproducts
+
 const AllProducts = ({
-  products: { products, loading },
+  products: { products, loading, currentProduct },
   getAllProducts,
   deleteProduct,
   selectCurrentProduct,
@@ -59,6 +62,24 @@ const AllProducts = ({
   const handleConsulter = (product) => {
     selectCurrentProduct(product)
     navigate(`/products/${product._id}`)
+  }
+
+  // Suppression Produit popup
+  const [isDelete, setDelete] = useState(false)
+
+  const handleDelete = (prod) => {
+    setDelete(true)
+    selectCurrentProduct(prod)
+  }
+
+  const closeDelete = (prod) => {
+    setDelete(false)
+  }
+
+  const confirmDelete = () => {
+    setDelete(false)
+    deleteProduct(currentProduct._id)
+    selectCurrentProduct(null)
   }
 
   return loading ? (
@@ -129,7 +150,7 @@ const AllProducts = ({
                   </button>
 
                   <button
-                    onClick={() => deleteProduct(product._id)}
+                    onClick={() => handleDelete(product)}
                     className='table-action'
                   >
                     Supprimer
@@ -140,11 +161,13 @@ const AllProducts = ({
           </TableBody>
         </Table>
       </TableContainer>
-      {
-        // "open" to make it re-rendeer
-      }
 
       <AddProductModal modify={modify} open={open} handleClose={handleClose} />
+      <ValidationPop
+        open={isDelete}
+        handleClose={closeDelete}
+        validateAction={confirmDelete}
+      />
     </div>
   )
 }
