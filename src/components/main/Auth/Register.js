@@ -1,7 +1,9 @@
 import './Auth.css'
 import { useForm } from 'react-hook-form'
 import { connect } from 'react-redux'
+import { Navigate } from 'react-router-dom'
 import { registerUser } from '../../../redux/actions/authentification'
+import Spinner from '../../reusable/Spinner'
 
 const Register = ({ auth, registerUser }) => {
   const {
@@ -12,6 +14,8 @@ const Register = ({ auth, registerUser }) => {
   const handleLogin = (data) => {
     registerUser(data)
   }
+
+  if (auth.isAuthenticated) return <Navigate to='/products' />
 
   return (
     <div className='login-wrapper'>
@@ -34,7 +38,7 @@ const Register = ({ auth, registerUser }) => {
             {errors.firstName && (
               <div className='form-error'>
                 {errors.firstName.type === 'required' && (
-                  <p id='firstName-error' class='field_error'>
+                  <p id='firstName-error' className='field_error'>
                     Le prenom est requis.
                   </p>
                 )}
@@ -131,7 +135,7 @@ const Register = ({ auth, registerUser }) => {
               data-disable-with='Creating account...'
             />
           ) : (
-            <p>Loading...</p>
+            <Spinner />
           )}
         </form>
       </div>

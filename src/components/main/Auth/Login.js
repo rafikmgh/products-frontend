@@ -1,7 +1,10 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
+import { Navigate } from 'react-router-dom'
 import { connect } from 'react-redux'
 import './Auth.css'
+import Spinner from '../../reusable/Spinner'
+
 import { loginUser } from '../../../redux/actions/authentification'
 
 const LoginUser = ({ auth, loginUser }) => {
@@ -13,6 +16,10 @@ const LoginUser = ({ auth, loginUser }) => {
   } = useForm()
   const handleLogin = (data) => {
     loginUser(data)
+  }
+
+  if (auth.isAuthenticated && auth.currentUser != null) {
+    return <Navigate to='/products' />
   }
 
   return (
@@ -91,7 +98,7 @@ const LoginUser = ({ auth, loginUser }) => {
               data-disable-with='Creating account...'
             />
           ) : (
-            <p>Loading...</p>
+            <Spinner />
           )}
         </form>
       </div>

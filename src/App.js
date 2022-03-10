@@ -1,12 +1,19 @@
-import Header from './components/main/Header/Header'
-import { Provider } from 'react-redux'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import './App.css'
+import { Provider } from 'react-redux'
 import store from './store'
-import Register from './components/main/Auth/Register'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Login from './components/main/Auth/Login'
+import Register from './components/main/Auth/Register'
+import Header from './components/main/Header/Header'
+import AllProducts from './components/products/ProductManage/AllProducts'
+import PrivateRoutes from './routes/PrivateRoutes'
+import { loadUser } from './redux/actions/authentification'
+import { useEffect } from 'react'
 
 function App() {
+  useEffect(() => {
+    store.dispatch(loadUser())
+  }, [])
   return (
     <Provider store={store}>
       <Router>
@@ -15,8 +22,8 @@ function App() {
           <Routes>
             <Route path='/' element={<Login />} />
             <Route path='/register' element={<Register />} />
-            <Route path='/products'>
-              <Route path='' />
+            <Route path='/products' element={<PrivateRoutes />}>
+              <Route path='' element={<AllProducts />} />
               <Route path='/products/:productID' />
             </Route>
           </Routes>
