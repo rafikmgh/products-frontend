@@ -1,70 +1,26 @@
-# Getting Started with Create React App
+/**_manuel pour executer le projet localement_**/
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+/**_Etape 1_**/
+il faut avoir nodeJs intallé !
 
-## Available Scripts
+/**_Etape 2_**/
+cloner les deux répertoires sur mon github :
 
-In the project directory, you can run:
+backend : git clone https://github.com/rafikmgh/products-backend.git <nom_du_projet>
 
-### `npm start`
+forntend : git clone https://github.com/rafikmgh/products-frontend.git <nom_du_projet>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+PS: il faut les mettre dans le même repertoire <nom_du_projet>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+/**_Etape 3_**/
+aller dans chacun des deux dossiers clonnés et excuter "npm install" pour installer toutes dependences npm utilisé pour le projet
 
-### `npm test`
+/**_Etape 4_**/
+pour lancer les deux avec "concurrently" il faut rennomer le dossier "products-frontend" avec le nom "client"
+puis lancer la commande : "npm run dev"
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+ps:il faut que les deux dossiers back et front soient dans le meme dossier parent <nom_du_projet>
 
-### `npm run build`
+/**\*\*\***BONUS**\*\*\*\***/
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+le site est déjà hébergé sur "netlify" via l'url : https://meghouche-products.netlify.app/
