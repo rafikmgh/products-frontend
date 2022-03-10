@@ -59,7 +59,7 @@ const Register = ({ auth, registerUser }) => {
             {errors.lastName && (
               <div className='form-error'>
                 {errors.lastName.type === 'required' && (
-                  <p id='lastName-error' class='field_error'>
+                  <p id='lastName-error' className='field_error'>
                     Le nom est requis.
                   </p>
                 )}
@@ -80,7 +80,7 @@ const Register = ({ auth, registerUser }) => {
             {errors.email && (
               <div className='form-error'>
                 {errors.email.type === 'required' && (
-                  <p id='email-error' class='field_error'>
+                  <p id='email-error' className='field_error'>
                     L'email est requis.
                   </p>
                 )}
@@ -103,12 +103,12 @@ const Register = ({ auth, registerUser }) => {
             {errors.password && (
               <div className='form-error'>
                 {errors.password.type === 'required' && (
-                  <p id='password-error' class='field_error'>
+                  <p id='password-error' className='field_error'>
                     Le mot de passe est requis.
                   </p>
                 )}
                 {errors.password.type === 'minLength' && (
-                  <p id='password-error-length' class='field_error'>
+                  <p id='password-error-length' className='field_error'>
                     Le mot de passe doit comprendre 8 caracteres au minimum.
                   </p>
                 )}
@@ -118,7 +118,7 @@ const Register = ({ auth, registerUser }) => {
 
           {auth.error !== null && (
             <div className='mt-40'>
-              <p id='email-error' class='field_error'>
+              <p id='email-error' className='field_error'>
                 {auth.error === 'email_exist'
                   ? 'Your email address already exists, please use a new one'
                   : auth.error}
