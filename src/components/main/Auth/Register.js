@@ -115,7 +115,7 @@ const Register = ({ auth, registerUser }) => {
           {auth.error !== null && (
             <div className='mt-40'>
               <p id='email-error' class='field_error'>
-                {auth.error == 'email_exist'
+                {auth.error === 'email_exist'
                   ? 'Your email address already exists, please use a new one'
                   : auth.error}
               </p>

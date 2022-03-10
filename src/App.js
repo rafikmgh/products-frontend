@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import './App.css'
 import store from './store'
 import Register from './components/main/Auth/Register'
+import Login from './components/main/Auth/Login'
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
         <div className='App'>
           <Header />
           <Routes>
-            <Route path='/' />
+            <Route path='/' element={<Login />} />
             <Route path='/register' element={<Register />} />
             <Route path='/products'>
               <Route path='' />
