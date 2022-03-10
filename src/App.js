@@ -3,6 +3,7 @@ import { Provider } from 'react-redux'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import './App.css'
 import store from './store'
+import Register from './components/main/Auth/Register'
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
           <Header />
           <Routes>
             <Route path='/' />
-            <Route path='/register' />
+            <Route path='/register' element={<Register />} />
             <Route path='/products'>
               <Route path='' />
               <Route path='/products/:productID' />
