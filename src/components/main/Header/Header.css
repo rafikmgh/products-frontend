@@ -1,0 +1,41 @@
+.app-header {
+  background-color: var(--primary-color);
+  display: flex;
+  height: 80px;
+  justify-content: right;
+  align-items: center;
+}
+
+.header-links li {
+  margin-right: 20px;
+  list-style: none;
+}
+
+.header-links li {
+  display: inline-block;
+  padding: 0px 15px 20px;
+}
+
+.header-links li a {
+  transition: all 0.3s ease 0s;
+  color: white;
+  text-decoration: none;
+}
+
+.header-links li a {
+  background-color: var(--secondary-color);
+  padding: 10px 20px;
+  border-radius: 4px;
+}
+
+.header-links li a:hover {
+  background-color: var(--other-color);
+}
+
+.header-links li a:hover {
+  color: white;
+}
+
+.app-header h1 {
+  font-size: 24px;
+}
