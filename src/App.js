@@ -9,6 +9,7 @@ import AllProducts from './components/products/ProductManage/AllProducts'
 import PrivateRoutes from './routes/PrivateRoutes'
 import { loadUser } from './redux/actions/authentification'
 import { useEffect } from 'react'
+import Product from './components/products/ProductManage/Product'
 
 function App() {
   useEffect(() => {
@@ -24,7 +25,7 @@ function App() {
             <Route path='/register' element={<Register />} />
             <Route path='/products' element={<PrivateRoutes />}>
               <Route path='' element={<AllProducts />} />
-              <Route path='/products/:productID' />
+              <Route path='/products/:productID' element={<Product />} />
             </Route>
           </Routes>
         </div>
