@@ -87,7 +87,13 @@ const AllProducts = ({
       <Spinner />
     </CenteredPage>
   ) : products.length == 0 ? (
-    <CenteredPage>No products yet</CenteredPage>
+    <CenteredPage>
+      <button onClick={handleOpen} className='add-product'>
+        Ajouter
+      </button>
+      No products yet
+      <AddProductModal modify={modify} open={open} handleClose={handleClose} />
+    </CenteredPage>
   ) : (
     //all products table from material UI
     <div className='products-page'>
